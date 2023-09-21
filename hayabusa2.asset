@@ -133,7 +133,7 @@ local hayabusa2Focus = {
 
 
 local MoveHayabusa2 = {
-  Identifier = "movehayabusa2",
+  Identifier = "MoveHayabusa2",
   Name = "Move to Hayabusa2",
   Command = [[
     openspace.pathnavigation.flyTo("hayabusa2")
@@ -143,6 +143,63 @@ local MoveHayabusa2 = {
   isLocal = false
 }
 
+local RemoveInsignias = {
+  Identifier = "RemoveInsignias",
+  Name = "Remove Insignias",
+  Command = [[
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_capsule.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_capsule.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_panel.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_tracker.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_panel.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_horn.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_tracker.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_horn.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_Ka-band.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_Ka-band.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band-medium.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band-medium.Renderable.Enabled", false)
+  ]],
+  Documentation = "RemoveInsignias",
+  GuiPath = "/Missions/Hayabusa2",
+  isLocal = false
+}
+
+
+
+local AddInsignias = {
+    Identifier = "AddInsignias",
+    Name = "Add Insignias",
+    Command = [[
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_capsule.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_capsule.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_capsule.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_panel.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_panel.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_panel.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_tracker.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_tracker.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_tracker.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_horn.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_horn.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_horn.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_Ka-band.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_Ka-band.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_Ka-band.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band-medium.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band-medium.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_X-band-medium.Renderable.Fade",1,1)
+    ]],
+    Documentation = "AddInsignias",
+    GuiPath = "/Missions/Hayabusa2",
+    isLocal = false
+  }
+  
 
 
 asset.onInitialize(function()
@@ -152,6 +209,8 @@ asset.onInitialize(function()
   openspace.action.registerAction(ryuguEncounter)
   openspace.action.registerAction(hayabusa2Focus)
   openspace.action.registerAction(MoveHayabusa2)
+  openspace.action.registerAction(RemoveInsignias)
+  openspace.action.registerAction(AddInsignias)
 end)
 
 asset.onDeinitialize(function()
@@ -161,6 +220,8 @@ asset.onDeinitialize(function()
   openspace.action.removeAction(ryuguEncounter)
   openspace.action.removeAction(hayabusa2Focus)
   openspace.action.removeAction(MoveHayabusa2)
+  openspace.action.removeAction(RemoveInsignias)
+  openspace.action.removeAction(AddInsignias)
 end)
 
 asset.export(hayabusa2)
@@ -169,3 +230,5 @@ asset.export(hayabusa2Trail)
 asset.export(ryuguEncounter)
 asset.export(hayabusa2Focus)
 asset.export(MoveHayabusa2)
+asset.export(RemoveInsignias)
+asset.export(AddInsignias)

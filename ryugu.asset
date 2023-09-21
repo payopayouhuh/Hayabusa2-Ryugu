@@ -164,7 +164,16 @@ local RyuguFocus = {
     IsLocal = true
 }
 
-
+local MoveRyugu = {
+    Identifier = "MoveRyugu",
+    Name = "Move to Ryugu",
+    Command = [[
+      openspace.pathnavigation.flyTo("Ryugu")
+    ]],
+    Documentation = "Move to Ryugu",
+    GuiPath = "/Missions/Ryugu",
+    isLocal = false
+  }
 
 
 asset.onInitialize(function()
@@ -173,6 +182,7 @@ asset.onInitialize(function()
   openspace.addSceneGraphNode(ryuguTrail)
   openspace.addSceneGraphNode(ryuguLabel)
   openspace.action.registerAction(RyuguFocus)
+  openspace.action.registerAction(MoveRyugu)
 end)
 asset.onDeinitialize(function()
     openspace.removeSceneGraphNode(ryugu)
@@ -180,9 +190,11 @@ asset.onDeinitialize(function()
     openspace.removeSceneGraphNode(ryuguTrail)
     openspace.removeSceneGraphNode(ryuguLabel)
     openspace.action.removeAction(RyuguFocus)
+    openspace.action.removeAction(MoveRyugu)
 end)
 asset.export(ryuguPosition)
 asset.export(ryugu)
 asset.export(ryuguTrail)
 asset.export(ryuguLabel)
 asset.export(RyuguFocus)
+asset.export(MoveRyugu)
