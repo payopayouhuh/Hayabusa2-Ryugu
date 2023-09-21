@@ -1,0 +1,171 @@
+local sunTransforms = asset.require('scene/solarsystem/sun/transforms')
+local transforms = asset.require('./transforms')
+local ryuguTransforms = asset.require('./ryugu')
+local kernels = asset.require('./kernels')
+
+local LightSources = {
+  {
+    Type = "SceneGraphLightSource",
+    Identifier = "Sun",
+    Node = sunTransforms.SolarSystemBarycenter.Identifier,
+    Intensity = 1.0
+  },
+}
+
+local missionBegin = "2014 Dec 03 04:22:04"
+local startRyuEnc  = "2018 JUN 27 00:00:00"
+local foreverEnd = "2028 MAR 15 13:35:00"
+
+
+local hayabusa2 = {
+    Identifier = "hayabusa2",
+    Parent = transforms.hayabusa2Position.Identifier, 
+    Transform = {
+        Rotation = {
+            Type = "SpiceRotation",
+            SourceFrame = "HAYABUSA2_SC_BUS_PRIME",
+            DestinationFrame = "GALACTIC",
+            Kernels = kernels.hayabusa2Kernels
+        },
+        -- Translation = {
+        --     Type = "SpiceTranslation",
+        --     Target = BennuBodyId,
+        --     Observer = "SSB"
+        -- },
+        TimeFrame = {
+            Type = "TimeFrameInterval",
+            Start = missionBegin,
+            End = foreverEnd
+        },
+        Scale = {
+            Type = "StaticScale",
+            Scale = 0.014
+        }
+    },
+    Renderable = {
+        Type = "RenderableModel",
+        Body = "hayabusa2",
+        GeometryFile = asset.localResource("hayabusa2_model/Hayabusa2_Model_4.fbx"),
+        RotationVector = {90, 0, 0},
+        LightSources = LightSources,
+        AmbientIntensity = 0.05,
+        SpecularIntensity = 0.0
+    },        
+    GUI = {
+        Name = "Hayabusa2 Model",
+        Path = "/Solar System/Missions/Hayabusa2/Model"
+    }
+}
+
+
+----HAYABUSA 2 TRAIL----------------------
+
+local hayabusa2CruiseTrail = {
+    Identifier = "hayabusa2CruiseTrail",
+    Parent = sunTransforms.SolarSystemBarycenter.Identifier,
+    Renderable = {
+        Type = "RenderableTrailTrajectory",
+        Translation = {
+            Type = "SpiceTranslation",
+            Target = "-37", 
+            Observer = "SUN",
+            Frame = "GALACTIC",
+            Kernels = kernels.hayabusa2Kernels
+        },
+        Color = { 0.25, 0.75, 0 },
+        EnableFade = false,
+        StartTime = missionBegin,
+        EndTime = startRyuEnc,
+        SampleInterval = 10000,
+    },
+    GUI = {
+        Name = "Hayabusa2 Cruise Trail",
+        Path = "/Solar System/Missions/Hayabusa2/Trails"
+    }
+}
+
+
+local hayabusa2Trail = {
+    Identifier = "hayabusa2Trail",
+    Parent = ryuguTransforms.ryuguPosition.Identifier,
+    Renderable = {
+        Type = "RenderableTrailTrajectory",
+        Translation = {
+            Type = "SpiceTranslation",
+            Target = "-37", 
+            Observer = "RYUGU",
+            Frame = "GALACTIC",
+            Kernels = kernels.hayabusa2Kernels
+        },
+        Color = { 0.23, 0.67, 0.86 },
+        EnableFade = false,
+        StartTime = startRyuEnc,
+        EndTime = foreverEnd,
+        SampleInterval = 7000,
+    },
+    GUI = {
+        Name = "Hayabusa2 Orbit Trail",
+        Path = "/Solar System/Missions/Hayabusa2/Trails"
+    }
+}
+
+local ryuguEncounter = {
+    Identifier = "ryuguEncounter",
+    Name = "Set Time to Ryugu Encounter",
+    Command = 'openspace.time.setTime("2018 JUN 27 00:00:00")',
+    GuiPath = "/Missions/Hayabusa2",
+    IsLocal = true
+}
+
+local hayabusa2Focus = {
+    Identifier = "hayabusa2Focus",
+    Name = "Set Focus to Hayabusa2",
+    Command = [[
+        openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Aim", '');
+        openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchor", nil);
+        openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Anchor", "hayabusa2");
+    ]],
+    GuiPath = "/Missions/Hayabusa2",
+    IsLocal = true
+}
+
+
+
+
+local MoveHayabusa2 = {
+  Identifier = "movehayabusa2",
+  Name = "Move to Hayabusa2",
+  Command = [[
+    openspace.pathnavigation.flyTo("hayabusa2")
+  ]],
+  Documentation = "Move to Hayabusa2",
+  GuiPath = "/Missions/Hayabusa2",
+  isLocal = false
+}
+
+
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(hayabusa2)
+  openspace.addSceneGraphNode(hayabusa2CruiseTrail)
+  openspace.addSceneGraphNode(hayabusa2Trail)
+  openspace.action.registerAction(ryuguEncounter)
+  openspace.action.registerAction(hayabusa2Focus)
+  openspace.action.registerAction(MoveHayabusa2)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(hayabusa2)
+  openspace.removeSceneGraphNode(hayabusa2CruiseTrail)
+  openspace.removeSceneGraphNode(hayabusa2Trail)
+  openspace.action.removeAction(ryuguEncounter)
+  openspace.action.removeAction(hayabusa2Focus)
+  openspace.action.removeAction(MoveHayabusa2)
+end)
+
+asset.export(hayabusa2)
+asset.export(hayabusa2CruiseTrail)
+asset.export(hayabusa2Trail)
+asset.export(ryuguEncounter)
+asset.export(hayabusa2Focus)
+asset.export(MoveHayabusa2)

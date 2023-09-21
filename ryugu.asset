@@ -1,0 +1,188 @@
+--RYUGU MODEL + TRAIL
+local sunTransforms = asset.require('scene/solarsystem/sun/transforms')
+local kernels = asset.require('./kernels')
+local LightSources = {
+  {
+    Type = "SceneGraphLightSource",
+    Identifier = "Sun",
+    Node = sunTransforms.SolarSystemBarycenter.Identifier,
+    Intensity = 1.0
+  },
+}
+local missionBegin = "2014 Dec 03 04:22:04"
+local startRyuEnc  = "2018 JUN 27 00:00:00"
+local foreverEnd = "2028 MAR 15 13:35:00"
+local ryuguPosition = {
+    Identifier = "ryuguPosition",
+    Parent = sunTransforms.SolarSystemBarycenter.Identifier,
+    Transform = {
+        Translation = {
+            Type = "SpiceTranslation",
+            Target = "2162173",
+            Observer = "SUN",
+            Kernels = kernels.ryuguKernels
+        }
+    },
+    GUI = {
+        Name = "Ryugu Position",
+        Path = "/Solar System/Missions/Ryugu/Position"
+    }
+}
+
+
+
+--need labeslPath?
+
+
+local ryugu = {
+    Identifier = "Ryugu",
+    Parent = "ryuguPosition",
+    Transform = {
+        Rotation = {
+            Type = "SpiceRotation",
+            SourceFrame = "RYUGU_FIXED",
+            DestinationFrame = "GALACTIC",
+            Kernels = kernels.ryuguKernels
+        },
+        Scale = {
+            Type = "StaticScale",
+            Scale = 8.42
+        }
+    },
+    Renderable = {
+        Type = "RenderableModel",
+        Body = "Ryugu",
+        GeometryFile = asset.localResource("hayabusa2_model/Ryugu_Model_2.fbx"),
+        LightSources = LightSources,
+        AmbientIntensity = 0.0,
+        SpecularIntensity = 0.0
+
+
+        --need Labels?but RenderableModel hasn't label...
+        -- Labels = {
+        --     Enabled = false,
+        --     FileName = labelsPath .. "Ryugu.labels",
+        --     AlignmentOption = "Horizontally", -- or Circularly
+        --     FontSize = 20.0,
+        --     Size = 5.0,
+        --     FadeInEnabled = true,
+        --     FadeOutEnabled = true,
+        --     FadeDistances = { 10000.0, 300000.0 },
+        --     DistanceEPS = 1500000.0,
+        --     Color = { 1.0, 0.0, 0.0 }
+        --   }
+
+    },
+
+
+
+    
+
+    GUI = {
+        Name = "Ryugu",
+        Path = "/Solar System/Missions/Ryugu/Model"
+    }
+}
+
+
+local ryuguLabel = {
+    Identifier = "ryuguLabel",
+    Parent = "ryuguPosition",
+    -- Renderable = {
+    --     Enabled = false,
+    --     Type = "RenderableLabel",
+    --     Text = "Ryugu",
+    --     FontSize = 120.0,
+    --     Size = 500.0,
+    --     MinMaxSize = { 1, 500 },
+    --     OrientationOption = "Camera View Direction",
+    --     BlendMode = "Additive",
+    --     EnableFading = true, 
+    --     FadeUnit = "Km",
+    --     FadeDistances = { 0.1, 1000.0 },
+    --     FadeWidths = { 1.0, 4000.0 }
+    --   },
+    Renderable = {
+        Enabled = false,
+        Type = "RenderableLabel",
+        Text = "Ryugu",
+        FontSize = 70.0,
+        Size = 8.5,
+        MinMaxSize = { 1, 40 },
+        OrientationOption = "Camera View Direction",
+        BlendMode = "Additive",
+        EnableFading = true,
+        FadeUnit = "au",
+        FadeDistances = { 1.5, 25.0 },
+        FadeWidths = { 1.0, 35.0 }
+  },
+      Tag = { "solarsystem_labels" },
+    GUI = {
+        Name = "Ryugu Label",
+        Path = "/Solar System/Missions/Ryugu/Label"
+    }
+}
+
+
+
+
+local ryuguTrail = {
+    Identifier = "ryuguTrail",
+    Parent = sunTransforms.SolarSystemBarycenter.Identifier,
+    Renderable = {
+        Type = "RenderableTrailTrajectory",
+        Translation = {
+            Type = "SpiceTranslation",
+            Target = "2162173",
+            Observer = "SUN",
+            Frame = "GALACTIC",
+            Kernels = kernels.ryuguKernels
+        },
+        Color = { 0.88, 0.00, 0.35 },
+        EnableFade = false,
+        StartTime = missionBegin,
+        EndTime = foreverEnd,
+        SampleInterval = 7000,
+        TimeStampSubsampleFactor = 1
+    },
+    GUI = {
+        Name = "Ryugu Trail",
+        Path = "/Solar System/Missions/Ryugu/Trail"
+    }
+}
+
+
+local RyuguFocus = {
+    Identifier = "RyuguFocus",
+    Name = "Set Focus to Ryugu",
+    Command = [[
+        openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Aim", '');
+        openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchor", nil);
+        openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Anchor", "Ryugu");
+    ]],
+    GuiPath = "/Missions/Ryugu",
+    IsLocal = true
+}
+
+
+
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(ryuguPosition)
+  openspace.addSceneGraphNode(ryugu)
+  openspace.addSceneGraphNode(ryuguTrail)
+  openspace.addSceneGraphNode(ryuguLabel)
+  openspace.action.registerAction(RyuguFocus)
+end)
+asset.onDeinitialize(function()
+    openspace.removeSceneGraphNode(ryugu)
+    openspace.removeSceneGraphNode(ryuguPosition)
+    openspace.removeSceneGraphNode(ryuguTrail)
+    openspace.removeSceneGraphNode(ryuguLabel)
+    openspace.action.removeAction(RyuguFocus)
+end)
+asset.export(ryuguPosition)
+asset.export(ryugu)
+asset.export(ryuguTrail)
+asset.export(ryuguLabel)
+asset.export(RyuguFocus)

@@ -1,0 +1,219 @@
+local hayabusa2Asset = asset.require("./hayabusa2")
+local sunAsset = asset.require("scene/solarsystem/sun/sun")
+
+
+
+local modelFolder = asset.syncedResource({
+  Name = "Scale School Bus",
+  Type = "HttpSynchronization",
+  Identifier = "scale_model_school_bus",
+  Version = 1
+})
+
+local insigniasPath = asset.syncedResource({
+  Name = "Hayabusa Insignias",
+  Type = "HttpSynchronization",
+  Identifier = "images_hayabusa",
+  Version = 1
+})
+
+
+
+
+
+
+local Hayabusa_capsule = {
+  Identifier = "HayabusaInsignia_capsule",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { -80, -10,-20 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "capsule.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa capsule"
+  }
+}
+
+
+local Hayabusa_panel = {
+  Identifier = "HayabusaInsignia_panel",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { 0.0, 150, 50.0 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "panel.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa panel"
+  }
+}
+
+
+local Hayabusa_tracker = {
+  Identifier = "HayabusaInsignia_tracker",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { -90, 0,40 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "tracker.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa tracker"
+  }
+}
+
+
+local Hayabusa_horn = {
+  Identifier = "HayabusaInsignia_horn",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { -70, 10,-90 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "horn.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa horn"
+  }
+}
+
+local Hayabusa_Xband = {
+  Identifier = "HayabusaInsignia_X-band",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { 0.0, 20, 70 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "X-band.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa x-band"
+  }
+}
+local Hayabusa_Kaband = {
+  Identifier = "HayabusaInsignia_Ka-band",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { 0.0, -50, 70 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "Ka-band.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa Kaband"
+  }
+}
+local Hayabusa_Xbandmedium = {
+  Identifier = "HayabusaInsignia_X-band-medium",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { 50, -18, 70 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 70,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "X-band-medium.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa X-band medium"
+  }
+}
+
+
+
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(Hayabusa_capsule)
+  openspace.addSceneGraphNode(Hayabusa_panel)
+  openspace.addSceneGraphNode(Hayabusa_tracker)
+  openspace.addSceneGraphNode(Hayabusa_horn)
+  openspace.addSceneGraphNode(Hayabusa_Xband)
+  openspace.addSceneGraphNode(Hayabusa_Kaband)
+  openspace.addSceneGraphNode(Hayabusa_Xbandmedium)
+
+end)
+
+asset.onDeinitialize(function()
+
+  openspace.removeSceneGraphNode(Hayabusa_capsule)
+  openspace.removeSceneGraphNode(Hayabusa_panel)
+  openspace.removeSceneGraphNode(Hayabusa_tracker)
+  openspace.removeSceneGraphNode(Hayabusa_horn)
+  openspace.removeSceneGraphNode(Hayabusa_Xband)
+  openspace.removeSceneGraphNode(Hayabusa_Kaband)
+  openspace.removeSceneGraphNode(Hayabusa_Xbandmedium)
+end)
+
+
+asset.export(Hayabusa_panel)
+asset.export(Hayabusa_capsule)
+asset.export(Hayabusa_tracker)
+asset.export(Hayabusa_horn)
+asset.export(Hayabusa_Kaband)
+asset.export(Hayabusa_Xband)
+asset.export(Hayabusa_Xbandmedium)

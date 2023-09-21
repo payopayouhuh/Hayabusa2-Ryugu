@@ -1,0 +1,70 @@
+
+local Mission = {
+  Name = "The Hayabusa2 Missions",
+  Image = "https://www.hayabusa2.jaxa.jp/galleries/cg/logo/img/logo1.png",
+  Description = "Hayabusa2 was launched in December 2014 and took about three and a half years to reach Ryugu. At Ryugu, we were able to gain scientific insights through detailed surveys of geological features and crater experiments. Hayabusa2 also successfully collected samples from Ryugu and arrived on Earth in December 2020. Hayabusa2 is attracting attention as a spacecraft that has taken an important step toward unraveling the mysteries of the solar system.",
+  Actions = { "hayabusa2Focus" ,"RyuguFocus","MoveHayabusa2"},
+  Milestones = {
+    {
+      Name = "Orbit control by Earth swing-by",
+      Date = "2015 DEC 3 10:07:00",
+      Image = "https://global.jaxa.jp/press/2015/12/images/20151214_hayabusa2_1.jpg",
+      Description = "Controlling the orbit using the Earth’s gravitational force is called Earth swing-by. On December 3, 2015, exactly one year after departing from Earth, the spacecraft approached Earth and performed Earth swing-by, amplifying its speed and controlling its orbit in the direction of Ryugu.",
+    },
+    {
+      Name = "First touchdown on Ryugu",
+      Date = "2019 FEB 21 22:29:00",
+      Description = "The first touchdown on Ryugu was originally scheduled for late October 2018. However, during the touchdown rehearsal that began on September 10, 2018, the spacecraft autonomously stopped its descent and began to ascend.The reason is thought to be that the laser altimeter (LIDAR) that was used to measure the distance between the asteroid surface and the spacecraft was unable to measure the distance between the asteroid surface and the spacecraft due to the low reflectance of Ryugu’s surface.Due to this problem, the first touchdown was postponed to February 2019, but we were able to successfully collect surface material samples during this touchdown.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/cpslrtn/img/fig34.png",
+    },
+    {
+      Name = "Second touchdown on Ryugu",
+      Date = "2019 JUL 11 01:06:00",
+      Description = "Hayabusa2 succeeded in creating an artificial crater in April 2019 by colliding a copper block with Ryugu.Even more surprising, Hayabusa2 actually landed only 60 cm from its target point. An error of only 60cm against a target 300 million km away! The location was approximately 20 meters from the artificial crater, and it was estimated that the surface was covered with Ryugu subsurface material that was ejected when the crater was created. Hayabusa2 successfully collected samples of underground materials from there.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/cpslrtn/img/fig36.png",
+    },
+    {
+      Name = "Departing Ryugu for Earth",
+      Date = "2019 NOV 13 01:05:00",
+      Description = "Hayabusa2 was loaded with stones and sand from the asteroid Ryugu and left its orbit towards Earth.Although it took three and a half years to reach Ryugu, the return to Earth will be completed in a much shorter period of time, about one year. This is because Ryugu is much closer to Earth than it was in 2014.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/cg/pamphlet/img/ura_11_departure.png",
+    },
+    {
+      Name = "Arrival of a capsule containing Ryugu samples on Earth",
+      Date = "2020 DEC 5 17:54:00",
+      Description = "The capsule separated from Hayabusa2 around 5:30 a.m. on December 5, 2020, and entered the atmosphere 12 hours later, enduring heat of up to 3,000 degrees before falling. The capsule became a glowing fireball like a meteor, slowed by a parachute, and descended into the desert in the Woomera region of southern Australia. The capsule was subsequently discovered and collected in normal condition, and the team succeeded in collecting gases from Ryugu and collecting Ryugu samples.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/cpslrtn/img/FB2.jpg",
+    },
+  },
+  Phases = {
+    {
+      Name = "Arrival at asteroid Ryugu",
+      TimeRange = { Start = "2014 DEC 3 04:22:04", End = "2018 JUN 27 00:00:00" },
+      Description = "Hayabusa2 was launched on December 3, 2014. After an Earth swing-by on December 3, 2015, it arrived at the asteroid Ryugu on June 27, 2018. Ryugu is a roughly spherical asteroid about 2850ft in diameter.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/ryugu/img/fig11_fmhome_front.jpg"
+    },  
+    {
+      Name = "Sample collection with two touchdowns",
+      TimeRange = { Start = "2019 FEB 21 04:15:00", End = "2019 JUL 11 01:06:00" },
+      Description = "Hayabusa2 made two touchdowns to Ryugu. By collecting surface material the first time and subsurface material the second time, we were able to see changes in the vertical direction.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/cg/pamphlet/img/ura_08_touchdown.png",
+      Link = "https://www.hayabusa2.jaxa.jp/en/",
+      Actions = { "os.apollo11.setup.LandingSite", "os.apollo.DisableApolloSites" },
+    },
+    {
+      Name = "Return of Ryugu samples and future of Hayabusa2",
+      TimeRange = { Start = "2019 NOV 13 01:05:0", End = "2022 JUN 30 15:00:00" },
+      Description = "Hayabusa2 departed Ryugu carrying a capsule containing Ryugu samples. The capsule was then separated from a position approximately 220,000 kilometers away from Earth. After that, Hayabusa2 did not return to Earth, but instead used about half of its remaining fuel to fly to two new asteroids. The Hayabusa2 project was disbanded in June 2022, and subsequent mission is called Hayabusa2#. The first asteroid is scheduled to arrive in 2026, and the second in 2031.",
+      Image = "https://www.hayabusa2.jaxa.jp/galleries/cpslrtn/img/fig3.jpg"
+    },  
+  }
+}
+
+
+asset.onInitialize(function()
+  openspace.loadMission(Mission)
+end)
+
+asset.onDeinitialize(function()
+  openspace.unloadMission(Mission.Name)
+end)

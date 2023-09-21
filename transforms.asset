@@ -1,0 +1,43 @@
+--Hayabusa 2 Transforms
+
+local sunTransforms = asset.require('scene/solarsystem/sun/transforms')
+local ryuguTransforms = asset.require('./ryugu')
+local kernels = asset.require('./kernels')
+
+local missionBegin = "2014 Dec 03 04:22:04"
+local startRyuEnc  = "2018 JUN 27 00:00:00"
+local foreverEnd = "2028 MAR 15 13:35:00"
+
+local hayabusa2Position = {
+	Identifier = "hayabusa2Position",
+    Parent = sunTransforms.SolarSystemBarycenter.Identifier, 
+    Transform = {
+        Translation = {
+            Type = "SpiceTranslation",
+            Target = "-37",
+            Observer = "SUN",
+            Frame = "GALACTIC",
+            Kernels = kernels.hayabusa2Kernels
+        },
+        TimeFrame = {
+            Type = "TimeFrameInterval",
+            Start = missionBegin,
+            End = foreverEnd,
+        }
+    },
+    GUI = {
+        Hidden = true,
+        Name = "Hayabusa 2",
+        Path = "/Solar System/Missions/Hayabusa2/Position"
+    }
+}
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(hayabusa2Position)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(hayabusa2Position)
+end)
+
+asset.export(hayabusa2Position)

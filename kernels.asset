@@ -1,0 +1,52 @@
+--Hayabusa 2 Kernels
+
+local hayabusa2Kernels = {
+
+	asset.localResource("hayabusa2_kernels/lsk/naif0012.tls"),
+	asset.localResource("hayabusa2_kernels/fk/hyb2_hp_v01.tf"),
+	asset.localResource("hayabusa2_kernels/fk/hyb2_v14.tf"),
+	asset.localResource("hayabusa2_kernels/ik/hyb2_lidar_v02.ti"),
+	asset.localResource("hayabusa2_kernels/ik/hyb2_nirs3_v02.ti"),
+	asset.localResource("hayabusa2_kernels/ik/hyb2_onc_v05.ti"),
+	asset.localResource("hayabusa2_kernels/ik/hyb2_tir_v03.ti"),
+	asset.localResource("hayabusa2_kernels/sclk/hyb2_20141203-20191231_v01.tsc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_aocsc_2014_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_aocsc_2015_v01.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_aocsc_2016_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_aocsc_2017_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_aocsc_2018_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_aocsc_20190101000000_20190213030000_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hk_2014_v01.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hk_2014_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hk_2015_v01.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hk_2015_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hk_2016_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hk_2017_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hkattrpt_2014_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hkattrpt_2015_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hkattrpt_2016_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hkattrpt_2017_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hkattrpt_2018_v02.bc"),
+	asset.localResource("hayabusa2_kernels/ck/hyb2_hkattrpt_20190101000000_20190213030000_v02.bc"),
+
+	asset.localResource("hayabusa2_kernels/spk/hyb2_20141203-20141214_0001m_final_ver1.oem.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/hyb2_20141203-20151231_0001h_final_ver1.oem.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/hyb2_20141203-20161119_0001h_final_ver1.oem.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/hyb2_20151123-20151213_0001m_final_ver1.oem.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/hyb2_approach_od_v20180811114238.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/hyb2_hpk_20180627_20190213_v01.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/lidar_derived_trj_20191114_20180630053224_20190213030000_v02.bsp"),
+}
+local ryuguKernels = {
+	asset.localResource("hayabusa2_kernels/fk/hyb2_ryugu_v01.tf"),
+
+	asset.localResource("hayabusa2_kernels/pck/hyb2_ryugu_shape_v20190328.tpc"),
+	asset.localResource("hayabusa2_kernels/pck/pck00010.tpc"),
+
+	asset.localResource("hayabusa2_kernels/spk/2162173_Ryugu.bsp"),
+	asset.localResource("hayabusa2_kernels/spk/2162173_ryugu_20180601-20191230_0060_20181221.bsp")
+}
+
+
+asset.export("hayabusa2Kernels", hayabusa2Kernels)
+asset.export("ryuguKernels", ryuguKernels)
