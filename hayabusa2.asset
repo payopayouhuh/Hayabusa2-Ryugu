@@ -134,7 +134,7 @@ local hayabusa2Focus = {
 
 local MoveHayabusa2 = {
   Identifier = "MoveHayabusa2",
-  Name = "Move to Hayabusa2",
+  Name = "Fry to Hayabusa2",
   Command = [[
     openspace.pathnavigation.flyTo("hayabusa2")
   ]],

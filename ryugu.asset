@@ -166,7 +166,7 @@ local RyuguFocus = {
 
 local MoveRyugu = {
     Identifier = "MoveRyugu",
-    Name = "Move to Ryugu",
+    Name = "Fry to Ryugu",
     Command = [[
       openspace.pathnavigation.flyTo("Ryugu")
     ]],
