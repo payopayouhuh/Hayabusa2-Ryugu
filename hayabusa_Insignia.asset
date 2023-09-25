@@ -185,6 +185,100 @@ local Hayabusa_Xbandmedium = {
 }
 
 
+local Hayabusa_LIDAR = {
+  Identifier = "HayabusaInsignia_LIDAR",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { -70, -30,-55 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 35,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "LIDAR.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa LIDAR"
+  }
+
+}
+
+local Hayabusa_NIRS3 = {
+  Identifier = "HayabusaInsignia_NIRS3",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { -80, 10,-35 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 35,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "NIRS3.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa NIRS3"
+  }
+
+}
+
+local Hayabusa_TIR = {
+  Identifier = "HayabusaInsignia_TIR",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { -70, 20,-55 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 35,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "TIR.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa TIR"
+  }
+}
+
+local Hayabusa_ONC = {
+  Identifier = "HayabusaInsignia_ONC",
+  Parent = hayabusa2Asset.hayabusa2.Identifier,
+  Transform = {
+    Translation = {
+      Type = "StaticTranslation",
+      Position = { 60, -30,-65 }
+    }
+  },
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 35,
+    Origin = "Center",
+    Billboard = true,
+    Texture = insigniasPath .. "ONC.png",
+    Opacity = 1.0
+  },
+  GUI = {
+    Path = "/Other/Labels",
+    Name = "hayabusa ONC"
+  }
+
+}
 
 
 asset.onInitialize(function()
@@ -195,6 +289,10 @@ asset.onInitialize(function()
   openspace.addSceneGraphNode(Hayabusa_Xband)
   openspace.addSceneGraphNode(Hayabusa_Kaband)
   openspace.addSceneGraphNode(Hayabusa_Xbandmedium)
+  openspace.addSceneGraphNode(Hayabusa_LIDAR)
+  openspace.addSceneGraphNode(Hayabusa_NIRS3)
+  openspace.addSceneGraphNode(Hayabusa_TIR)
+  openspace.addSceneGraphNode(Hayabusa_ONC)
 
 end)
 
@@ -207,6 +305,10 @@ asset.onDeinitialize(function()
   openspace.removeSceneGraphNode(Hayabusa_Xband)
   openspace.removeSceneGraphNode(Hayabusa_Kaband)
   openspace.removeSceneGraphNode(Hayabusa_Xbandmedium)
+  openspace.removeSceneGraphNode(Hayabusa_LIDAR)
+  openspace.removeSceneGraphNode(Hayabusa_NIRS3)
+  openspace.removeSceneGraphNode(Hayabusa_TIR)
+  openspace.removeSceneGraphNode(Hayabusa_ONC)
 end)
 
 
@@ -217,3 +319,7 @@ asset.export(Hayabusa_horn)
 asset.export(Hayabusa_Kaband)
 asset.export(Hayabusa_Xband)
 asset.export(Hayabusa_Xbandmedium)
+asset.export(Hayabusa_LIDAR)
+asset.export(Hayabusa_NIRS3)
+asset.export(Hayabusa_TIR)
+asset.export(Hayabusa_ONC)
