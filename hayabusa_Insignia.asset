@@ -40,7 +40,7 @@ local Hayabusa_capsule = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa capsule"
   }
 }
@@ -64,7 +64,7 @@ local Hayabusa_panel = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa panel"
   }
 }
@@ -88,7 +88,7 @@ local Hayabusa_tracker = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa tracker"
   }
 }
@@ -112,7 +112,7 @@ local Hayabusa_horn = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa horn"
   }
 }
@@ -135,7 +135,7 @@ local Hayabusa_Xband = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa x-band"
   }
 }
@@ -157,7 +157,7 @@ local Hayabusa_Kaband = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa Kaband"
   }
 }
@@ -179,7 +179,7 @@ local Hayabusa_Xbandmedium = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa X-band medium"
   }
 }
@@ -203,7 +203,7 @@ local Hayabusa_LIDAR = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa LIDAR"
   }
 
@@ -227,7 +227,7 @@ local Hayabusa_NIRS3 = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa NIRS3"
   }
 
@@ -239,7 +239,7 @@ local Hayabusa_TIR = {
   Transform = {
     Translation = {
       Type = "StaticTranslation",
-      Position = { -70, 20,-55 }
+      Position = { 60, 20,-65 }
     }
   },
   Renderable = {
@@ -251,7 +251,7 @@ local Hayabusa_TIR = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa TIR"
   }
 }
@@ -274,7 +274,7 @@ local Hayabusa_ONC = {
     Opacity = 1.0
   },
   GUI = {
-    Path = "/Other/Labels",
+    Path = "/Solar System/Missions/Hayabusa2/Model/label",
     Name = "hayabusa ONC"
   }
 

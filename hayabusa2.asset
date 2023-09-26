@@ -199,8 +199,49 @@ local AddInsignias = {
     GuiPath = "/Missions/Hayabusa2",
     isLocal = false
   }
-  
 
+  local RemoveInsignias_2 = {
+    Identifier = "RemoveInsignias_2",
+    Name = "Remove Insignias_2",
+    Command = [[
+
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_TIR.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_ONC.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_TIR.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_NIRS3.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_ONC.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_LIDAR.Renderable.Fade",0,1)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_NIRS3.Renderable.Enabled", false)
+    openspace.setPropertyValueSingle("Scene.HayabusaInsignia_LIDAR.Renderable.Enabled", false)
+    ]],
+    Documentation = "RemoveInsignias_2",
+    GuiPath = "/Missions/Hayabusa2",
+    isLocal = false
+  }
+  
+  
+  
+  local AddInsignias_2 = {
+      Identifier = "AddInsignias_2",
+      Name = "Add Insignias_2",
+      Command = [[
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_LIDAR.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_LIDAR.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_LIDAR.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_NIRS3.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_NIRS3.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_NIRS3.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_ONC.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_ONC.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_ONC.Renderable.Fade",1,1)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_TIR.Renderable.Fade",0)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_TIR.Renderable.Enabled", true)
+        openspace.setPropertyValueSingle("Scene.HayabusaInsignia_TIR.Renderable.Fade",1,1)
+      ]],
+      Documentation = "AddInsignias_2",
+      GuiPath = "/Missions/Hayabusa2",
+      isLocal = false
+    }
 
 asset.onInitialize(function()
   openspace.addSceneGraphNode(hayabusa2)
@@ -211,6 +252,8 @@ asset.onInitialize(function()
   openspace.action.registerAction(MoveHayabusa2)
   openspace.action.registerAction(RemoveInsignias)
   openspace.action.registerAction(AddInsignias)
+  openspace.action.registerAction(AddInsignias_2)
+  openspace.action.registerAction(RemoveInsignias_2)
 end)
 
 asset.onDeinitialize(function()
@@ -222,6 +265,8 @@ asset.onDeinitialize(function()
   openspace.action.removeAction(MoveHayabusa2)
   openspace.action.removeAction(RemoveInsignias)
   openspace.action.removeAction(AddInsignias)
+  openspace.action.removeAction(AddInsignias_2)
+  openspace.action.removeAction(RemoveInsignias_2)
 end)
 
 asset.export(hayabusa2)
@@ -232,3 +277,5 @@ asset.export(hayabusa2Focus)
 asset.export(MoveHayabusa2)
 asset.export(RemoveInsignias)
 asset.export(AddInsignias)
+asset.export(RemoveInsignias_2)
+asset.export(AddInsignias_2)

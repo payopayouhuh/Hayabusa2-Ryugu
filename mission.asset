@@ -3,7 +3,7 @@ local Mission = {
   Name = "The Hayabusa2 Missions",
   Image = "https://www.hayabusa2.jaxa.jp/galleries/cg/logo/img/logo5_3.png",
   Description = "Hayabusa2 was launched in December 2014 and took about three and a half years to reach Ryugu. At Ryugu, we were able to gain scientific insights through detailed surveys of geological features and crater experiments. Hayabusa2 also successfully collected samples from Ryugu and arrived on Earth in December 2020. Hayabusa2 is attracting attention as a spacecraft that has taken an important step toward unraveling the mysteries of the solar system.",
-  Actions = { "hayabusa2Focus" ,"RyuguFocus","MoveHayabusa2","MoveRyugu" ,"RemoveInsignias" ,"AddInsignias"},
+  Actions = { "hayabusa2Focus" ,"RyuguFocus","MoveHayabusa2","MoveRyugu" ,"RemoveInsignias" ,"AddInsignias","RemoveInsignias_2" ,"AddInsignias_2"},
   Milestones = {
     {
       Name = "Orbit control by Earth swing-by",
