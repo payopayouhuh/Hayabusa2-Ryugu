@@ -19,266 +19,42 @@ local insigniasPath = asset.syncedResource({
 
 
 
-
-
-
-local Hayabusa_capsule = {
-  Identifier = "HayabusaInsignia_capsule",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { -80, -10,-20 }
+function createObject(identifier, parent, position, size, texture, name)
+  return {
+    Identifier = identifier,
+    Parent = parent,
+    Transform = {
+      Translation = {
+        Type = "StaticTranslation",
+        Position = position
+      }
+    },
+    Renderable = {
+      Type = "RenderablePlaneImageLocal",
+      Size = size,
+      Origin = "Center",
+      Billboard = true,
+      Texture = insigniasPath .. texture,
+      Opacity = 1.0
+    },
+    GUI = {
+      Path = "/Solar System/Missions/Hayabusa2/Model/label",
+      Name = name
     }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "capsule.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa capsule"
   }
-}
+end
 
-
-local Hayabusa_panel = {
-  Identifier = "HayabusaInsignia_panel",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { 0.0, 150, 50.0 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "panel.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa panel"
-  }
-}
-
-
-local Hayabusa_tracker = {
-  Identifier = "HayabusaInsignia_tracker",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { -90, 0,40 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "tracker.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa tracker"
-  }
-}
-
-
-local Hayabusa_horn = {
-  Identifier = "HayabusaInsignia_horn",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { -70, 10,-90 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "horn.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa horn"
-  }
-}
-
-local Hayabusa_Xband = {
-  Identifier = "HayabusaInsignia_X-band",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { 0.0, 20, 70 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "X-band.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa x-band"
-  }
-}
-local Hayabusa_Kaband = {
-  Identifier = "HayabusaInsignia_Ka-band",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { 0.0, -50, 70 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "Ka-band.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa Kaband"
-  }
-}
-local Hayabusa_Xbandmedium = {
-  Identifier = "HayabusaInsignia_X-band-medium",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { 50, -18, 70 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 70,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "X-band-medium.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa X-band medium"
-  }
-}
-
-
-local Hayabusa_LIDAR = {
-  Identifier = "HayabusaInsignia_LIDAR",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { -70, -30,-55 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 35,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "LIDAR.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa LIDAR"
-  }
-
-}
-
-local Hayabusa_NIRS3 = {
-  Identifier = "HayabusaInsignia_NIRS3",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { -80, 10,-35 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 35,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "NIRS3.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa NIRS3"
-  }
-
-}
-
-local Hayabusa_TIR = {
-  Identifier = "HayabusaInsignia_TIR",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { 60, 20,-65 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 35,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "TIR.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa TIR"
-  }
-}
-
-local Hayabusa_ONC = {
-  Identifier = "HayabusaInsignia_ONC",
-  Parent = hayabusa2Asset.hayabusa2.Identifier,
-  Transform = {
-    Translation = {
-      Type = "StaticTranslation",
-      Position = { 60, -30,-65 }
-    }
-  },
-  Renderable = {
-    Type = "RenderablePlaneImageLocal",
-    Size = 35,
-    Origin = "Center",
-    Billboard = true,
-    Texture = insigniasPath .. "ONC.png",
-    Opacity = 1.0
-  },
-  GUI = {
-    Path = "/Solar System/Missions/Hayabusa2/Model/label",
-    Name = "hayabusa ONC"
-  }
-
-}
+local Hayabusa_capsule = createObject("HayabusaInsignia_capsule", hayabusa2Asset.hayabusa2.Identifier, {-80, -10,-20}, 70, "capsule.png", "hayabusa capsule")
+local Hayabusa_panel = createObject("HayabusaInsignia_panel", hayabusa2Asset.hayabusa2.Identifier, {0.0, 150, 50.0}, 70, "panel.png", "hayabusa panel")
+local Hayabusa_tracker = createObject("HayabusaInsignia_tracker", hayabusa2Asset.hayabusa2.Identifier, {-90, 0,40}, 70, "tracker.png", "hayabusa tracker")
+local Hayabusa_horn = createObject("HayabusaInsignia_horn", hayabusa2Asset.hayabusa2.Identifier, {-70, 10,-90}, 70, "horn.png", "hayabusa horn")
+local Hayabusa_Xband = createObject("HayabusaInsignia_X-band", hayabusa2Asset.hayabusa2.Identifier, {0.0, 20, 70}, 70, "X-band.png", "hayabusa x-band")
+local Hayabusa_Kaband = createObject("HayabusaInsignia_Ka-band", hayabusa2Asset.hayabusa2.Identifier, {0.0, -50, 70}, 70, "Ka-band.png", "hayabusa Kaband")
+local Hayabusa_Xbandmedium = createObject("HayabusaInsignia_X-band-medium", hayabusa2Asset.hayabusa2.Identifier, {50, -18, 70}, 70, "X-band-medium.png", "hayabusa X-band medium")
+local Hayabusa_LIDAR = createObject("HayabusaInsignia_LIDAR", hayabusa2Asset.hayabusa2.Identifier, {-70, -30,-55}, 35, "LIDAR.png", "hayabusa LIDAR")
+local Hayabusa_NIRS3 = createObject("HayabusaInsignia_NIRS3", hayabusa2Asset.hayabusa2.Identifier, {-80, 10,-35}, 35, "NIRS3.png", "hayabusa NIRS3")
+local Hayabusa_TIR = createObject("HayabusaInsignia_TIR", hayabusa2Asset.hayabusa2.Identifier, {60, 20,-65}, 35, "TIR.png", "hayabusa TIR")
+local Hayabusa_ONC = createObject("HayabusaInsignia_ONC", hayabusa2Asset.hayabusa2.Identifier, {60, -30,-65}, 35, "ONC.png", "hayabusa ONC")
 
 
 asset.onInitialize(function()
