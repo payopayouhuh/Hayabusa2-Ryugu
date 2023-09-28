@@ -2,18 +2,10 @@ local hayabusa2Asset = asset.require("./hayabusa2")
 local sunAsset = asset.require("scene/solarsystem/sun/sun")
 
 
-
-local modelFolder = asset.syncedResource({
-  Name = "Scale School Bus",
-  Type = "HttpSynchronization",
-  Identifier = "scale_model_school_bus",
-  Version = 1
-})
-
 local insigniasPath = asset.syncedResource({
   Name = "Hayabusa Insignias",
   Type = "HttpSynchronization",
-  Identifier = "images_hayabusa",
+  Identifier = "hayabusa2_labels",
   Version = 1
 })
 
