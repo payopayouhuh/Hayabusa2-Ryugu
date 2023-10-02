@@ -10,7 +10,7 @@ local CapsuleImage = {
   RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
   UsePerspectiveProjection = false,
   Opacity = 1.0,
-  TexturePath = slide_image.capsule .. "return_capsule_1.jpg",
+  TexturePath = slide_image.image .. "return_capsule_1.jpg",
   Tag = { "mission_jwst_target" },
   Description = [[
     text
@@ -18,7 +18,7 @@ local CapsuleImage = {
 }
 
 local itokawaryuguscaleImage = {
-  Identifier = "Image",
+  Identifier = "itokawaryuguscaleImage",
   Type = "ScreenSpaceImageLocal",
   Name = "itokawaryuguscale",
   UseRadiusAzimuthElevation = true,
@@ -26,7 +26,7 @@ local itokawaryuguscaleImage = {
   RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
   UsePerspectiveProjection = false,
   Opacity = 1.0,
-  TexturePath = slide_image.capsule .. "itokawa-and-ryugu-to-scale.png",
+  TexturePath = slide_image.image .. "itokawa-and-ryugu-to-scale.png",
   Tag = { "mission_jwst_target" },
   Description = [[
     text
@@ -34,19 +34,115 @@ local itokawaryuguscaleImage = {
 }
 
 
+local ONCImage = {
+  Identifier = "ONCImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "ONC",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "ONC.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
+local MASCOTImage = {
+  Identifier = "itokawaryuguscaleImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "MASCOT",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "MASCOT.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
+local hornImage = {
+  Identifier = "hornImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "horn",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "horn.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
+local horn2Image = {
+  Identifier = "horn2Image",
+  Type = "ScreenSpaceImageLocal",
+  Name = "horn",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "horn2.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
+
+
+local communicationImage = {
+  Identifier = "communicationImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "communication",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "communication.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
 asset.onInitialize(function()
   openspace.addScreenSpaceRenderable(CapsuleImage)
   openspace.addScreenSpaceRenderable(itokawaryuguscaleImage)
+  openspace.addScreenSpaceRenderable(ONCImage)
+  openspace.addScreenSpaceRenderable(MASCOTImage)
+  openspace.addScreenSpaceRenderable(hornImage)
+  openspace.addScreenSpaceRenderable(horn2Image)
+  openspace.addScreenSpaceRenderable(communicationImage)
 end)
 
 asset.onDeinitialize(function()
   openspace.removeScreenSpaceRenderable(CapsuleImage)
   openspace.removeScreenSpaceRenderable(itokawaryuguscaleImage)
+  openspace.removeScreenSpaceRenderable(ONCImage)
+  openspace.removeScreenSpaceRenderable(MASCOTImage)
+  openspace.removeScreenSpaceRenderable(hornImage)
+  openspace.removeScreenSpaceRenderable(horn2Image)
+  openspace.removeScreenSpaceRenderable(communicationImage)
 end)
 
 asset.export(CapsuleImage)
 asset.export(itokawaryuguscaleImage)
-
+asset.export(ONCImage)
+asset.export(MASCOTImage)
+asset.export(hornImage)
+asset.export(horn2Image)
+asset.export(communicationImage)
 
 
 asset.meta = {

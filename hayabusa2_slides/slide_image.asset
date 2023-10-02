@@ -1,28 +1,16 @@
-local capsule = asset.syncedResource({
-  Name = "capsule Image",
+local image = asset.syncedResource({
+  Name = "slide Image",
   Type = "HttpSynchronization",
   Identifier = "slide_image",
   Version = 1
 })
 
 
-asset.export("capsule", capsule)
 
 
 
+asset.export("image", image)
 
-
-
-local itokawaryuguscale = asset.syncedResource({
-  Name = "itokawa-and-ryugu-to-scale Image",
-  Type = "HttpSynchronization",
-  Identifier = "slide_image",
-  Version = 1
-})
-
-
-asset.export("capsule", capsule)
-asset.export("itokawaryuguscale", itokawaryuguscale)
 
 asset.meta = {
   Name = "Crab Nebula",
