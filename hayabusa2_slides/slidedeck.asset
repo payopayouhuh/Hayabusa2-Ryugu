@@ -14,14 +14,19 @@ asset.onInitialize(function()
     Scale = 0.4
   })
 
-  helper.addSlide(deck, "${DATA}/test2.jpg")
-  helper.addSlide(deck, "${DATA}/test3.jpg")
+  helper.addSlide(deck, slide_image.image .. "image6.png")
   helper.addSlide(deck, slide_image.image .. "itokawa-and-ryugu-to-scale.png")
   helper.addSlide(deck, slide_image.image .. "MASCOT.png")
   helper.addSlide(deck, slide_image.image .. "communication.png")
   helper.addSlide(deck, slide_image.image .. "horn.png")
   helper.addSlide(deck, slide_image.image .. "horn2.png")
   helper.addSlide(deck, slide_image.image .. "onc.png")
+  helper.addSlide(deck, slide_image.image .. "image8.png")
+  helper.addSlide(deck, slide_image.image .. "image10.png")
+  helper.addSlide(deck, slide_image.image .. "image7.png")
+  helper.addSlide(deck, slide_image.image .. "image3.png")
+  helper.addSlide(deck, slide_image.image .. "image5.png")
+  helper.addSlide(deck, slide_image.image .. "image13.png")
 
   local interpolationDuration = 0.5
 
