@@ -116,6 +116,113 @@ local communicationImage = {
   ]]
 }
 
+
+local RocketImage = {
+  Identifier = "RocketImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "rocket",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image8.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+local SampleImage = {
+  Identifier = "SampleImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "sample",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image10.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+local ReturncapsuleillustrationImage = {
+  Identifier = "ReturncapsuleillustrationImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "returncapsuleillustration",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image7.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+local ReturncapsuleImage = {
+  Identifier = "ReturncapsuleImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "returncapsule",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image3.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+local MoleculesImage = {
+  Identifier = "MoleculesImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "molecules",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image5.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+local Hayabusa2sharpImage = {
+  Identifier = "Hayabusa2sharpImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "hayabusa2sharp",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image13.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+local TimelineImage = {
+  Identifier = "TimelineImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "timeline",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.image .. "image6.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
 asset.onInitialize(function()
   openspace.addScreenSpaceRenderable(CapsuleImage)
   openspace.addScreenSpaceRenderable(itokawaryuguscaleImage)
@@ -124,6 +231,13 @@ asset.onInitialize(function()
   openspace.addScreenSpaceRenderable(hornImage)
   openspace.addScreenSpaceRenderable(horn2Image)
   openspace.addScreenSpaceRenderable(communicationImage)
+  openspace.addScreenSpaceRenderable(RocketImage)
+  openspace.addScreenSpaceRenderable(SampleImage)
+  openspace.addScreenSpaceRenderable(ReturncapsuleillustrationImage)
+  openspace.addScreenSpaceRenderable(ReturncapsuleImage)
+  openspace.addScreenSpaceRenderable(MoleculesImage)
+  openspace.addScreenSpaceRenderable(Hayabusa2sharpImage)
+  openspace.addScreenSpaceRenderable(TimelineImage)
 end)
 
 asset.onDeinitialize(function()
@@ -134,6 +248,13 @@ asset.onDeinitialize(function()
   openspace.removeScreenSpaceRenderable(hornImage)
   openspace.removeScreenSpaceRenderable(horn2Image)
   openspace.removeScreenSpaceRenderable(communicationImage)
+  openspace.removeScreenSpaceRenderable(RocketImage)
+  openspace.removeScreenSpaceRenderable(SampleImage)
+  openspace.removeScreenSpaceRenderable(ReturncapsuleillustrationImage)
+  openspace.removeScreenSpaceRenderable(ReturncapsuleImage)
+  openspace.removeScreenSpaceRenderable(MoleculesImage)
+  openspace.removeScreenSpaceRenderable(Hayabusa2sharpImage)
+  openspace.removeScreenSpaceRenderable(TimelineImage)
 end)
 
 asset.export(CapsuleImage)
@@ -143,6 +264,14 @@ asset.export(MASCOTImage)
 asset.export(hornImage)
 asset.export(horn2Image)
 asset.export(communicationImage)
+asset.export(RocketImage)
+asset.export(SampleImage)
+asset.export(ReturncapsuleillustrationImage)
+asset.export(ReturncapsuleImage)
+asset.export(MoleculesImage)
+asset.export(Hayabusa2sharpImage)
+asset.export(TimelineImage)
+
 
 
 asset.meta = {
