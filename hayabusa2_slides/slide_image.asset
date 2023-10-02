@@ -1,0 +1,38 @@
+local capsule = asset.syncedResource({
+  Name = "capsule Image",
+  Type = "HttpSynchronization",
+  Identifier = "slide_image",
+  Version = 1
+})
+
+
+asset.export("capsule", capsule)
+
+
+
+
+
+
+local itokawaryuguscale = asset.syncedResource({
+  Name = "itokawa-and-ryugu-to-scale Image",
+  Type = "HttpSynchronization",
+  Identifier = "slide_image",
+  Version = 1
+})
+
+
+asset.export("capsule", capsule)
+asset.export("itokawaryuguscale", itokawaryuguscale)
+
+asset.meta = {
+  Name = "Crab Nebula",
+  Version = "1.0",
+  Description = "Crab Nebula Image",
+  Author = [[
+    NASA, ESA and Allison Loll/Jeff Hester (Arizona State University).
+    Acknowledgement: Davide De Martin (ESA/Hubble)
+  ]],
+  URL = "https://spaceflight101.com/spacecraft/hayabusa-2/3696318_orig/",
+  License = "CC BY 4.0"
+}
+

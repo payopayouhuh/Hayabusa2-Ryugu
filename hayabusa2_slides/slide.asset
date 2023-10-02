@@ -1,0 +1,59 @@
+local slide_image = asset.require("./slide_image")
+
+
+local CapsuleImage = {
+  Identifier = "CapsuleImage",
+  Type = "ScreenSpaceImageLocal",
+  Name = "capsule",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.capsule .. "return_capsule_1.jpg",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
+local itokawaryuguscaleImage = {
+  Identifier = "Image",
+  Type = "ScreenSpaceImageLocal",
+  Name = "itokawaryuguscale",
+  UseRadiusAzimuthElevation = true,
+  FaceCamera = false,
+  RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
+  UsePerspectiveProjection = false,
+  Opacity = 1.0,
+  TexturePath = slide_image.capsule .. "itokawa-and-ryugu-to-scale.png",
+  Tag = { "mission_jwst_target" },
+  Description = [[
+    text
+  ]]
+}
+
+
+asset.onInitialize(function()
+  openspace.addScreenSpaceRenderable(CapsuleImage)
+  openspace.addScreenSpaceRenderable(itokawaryuguscaleImage)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeScreenSpaceRenderable(CapsuleImage)
+  openspace.removeScreenSpaceRenderable(itokawaryuguscaleImage)
+end)
+
+asset.export(CapsuleImage)
+asset.export(itokawaryuguscaleImage)
+
+
+
+asset.meta = {
+  Name = "Crab Nebula Image",
+  Version = "1.0",
+  Description = "Screenspace image of the Crab Nebula",
+  Author = "OpenSpace Team",
+  URL = "http://openspaceproject.com",
+  License = "MIT license"
+}
