@@ -47,6 +47,7 @@ local Hayabusa_LIDAR = createObject("HayabusaInsignia_LIDAR", hayabusa2Asset.hay
 local Hayabusa_NIRS3 = createObject("HayabusaInsignia_NIRS3", hayabusa2Asset.hayabusa2.Identifier, {-80, 10,-35}, 35, "NIRS3.png", "hayabusa NIRS3")
 local Hayabusa_TIR = createObject("HayabusaInsignia_TIR", hayabusa2Asset.hayabusa2.Identifier, {60, 20,-65}, 35, "TIR.png", "hayabusa TIR")
 local Hayabusa_ONC = createObject("HayabusaInsignia_ONC", hayabusa2Asset.hayabusa2.Identifier, {60, -30,-65}, 35, "ONC.png", "hayabusa ONC")
+local Hayabusa_Xbandmedium = createObject("HayabusaInsignia_X-band-medium", hayabusa2Asset.hayabusa2.Identifier, {0.0, -60, 30}, 70, "MASCOT.png", "MASCOT")
 
 
 asset.onInitialize(function()

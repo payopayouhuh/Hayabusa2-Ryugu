@@ -13,9 +13,9 @@ asset.export("image", image)
 
 
 asset.meta = {
-  Name = "Crab Nebula",
+  Name = "Hayabusa2 Return Capsule",
   Version = "1.0",
-  Description = "Crab Nebula Image",
+  Description = "",
   Author = [[
     NASA, ESA and Allison Loll/Jeff Hester (Arizona State University).
     Acknowledgement: Davide De Martin (ESA/Hubble)

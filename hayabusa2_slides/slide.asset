@@ -11,7 +11,7 @@ local CapsuleImage = {
   UsePerspectiveProjection = true,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "return_capsule_1.jpg",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -27,7 +27,7 @@ local itokawaryuguscaleImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "itokawa-and-ryugu-to-scale.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -44,7 +44,7 @@ local ONCImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "ONC.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -60,7 +60,7 @@ local MASCOTImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "MASCOT.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -76,7 +76,7 @@ local hornImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "horn.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -92,7 +92,7 @@ local horn2Image = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "horn2.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -110,7 +110,7 @@ local communicationImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "communication.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -127,7 +127,7 @@ local RocketImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "image8.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -142,7 +142,7 @@ local SampleImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "image10.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -156,8 +156,8 @@ local ReturncapsuleillustrationImage = {
   RadiusAzimuthElevation = { 1.0, 0.5, 0.1 },
   UsePerspectiveProjection = false,
   Opacity = 1.0,
-  TexturePath = slide_image.image .. "image7.png",
-  Tag = { "mission_jwst_target" },
+  TexturePath = slide_image.image .. "",
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -172,7 +172,7 @@ local ReturncapsuleImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "image3.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -187,7 +187,7 @@ local MoleculesImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "image5.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -202,7 +202,7 @@ local Hayabusa2sharpImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "image13.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
@@ -217,7 +217,7 @@ local TimelineImage = {
   UsePerspectiveProjection = false,
   Opacity = 1.0,
   TexturePath = slide_image.image .. "image6.png",
-  Tag = { "mission_jwst_target" },
+  Tag = { "mission_hayabusa2_target" },
   Description = [[
     text
   ]]
