@@ -1,14 +1,5 @@
 # Visualizing Hayabusa 2 Mission in OpenSpace
 
-![image30](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/a1217937-79c8-47f5-9241-a775148a9a50)
-
-
-![image](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/2f60bd60-9cd3-434d-a7be-dfc0d04f0efb)
-
-![image](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/7fb90d0e-fedb-43ad-941b-fd192df92f20)
-
-# Visualizing Hayabusa 2 Mission in OpenSpace
-
 ![Visualizing Hayabusa 2 Mission](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/a1217937-79c8-47f5-9241-a775148a9a50)
 
 ## Data Source
@@ -72,4 +63,8 @@ Four phases of the mission are described in detail, each accompanied by a releva
 - [Hayabusa 2 Data Archive, Planetary Data System (PDS) Small Bodies Node]
 - [Hayabusa 2’s Data Management Plan]
 - [Asteroid Explorer Hayabusa 2, Institute of Space and Astronautical Science]
+
+![image](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/2f60bd60-9cd3-434d-a7be-dfc0d04f0efb)
+
+![image](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/7fb90d0e-fedb-43ad-941b-fd192df92f20)
 
