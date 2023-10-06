@@ -48,6 +48,55 @@ Four phases of the mission are described in detail, each accompanied by a releva
 
 *For more details and sources, refer to: [JAXA Hayabusa 2 Mission Website] and [JAXA Hayabusa 2 Image Gallery]*
 
+## slidedeck
+This asset contains a set of screen space images related to the Hayabusa2 mission, including images of the return capsule, the Hayabusa2 spacecraft, the Crab Nebula, and various other related visual elements.
+
+### Files
+- **slide_image.asset**: Contains paths to slide images.
+- **slidedeck.asset**: Contains details about slide decks.
+
+### Images
+
+- **Capsule Image**: An image showing the return capsule. File: `return_capsule_1.jpg`
+- **Itokawa and Ryugu to Scale Image**: A comparative image of the two asteroids. File: `itokawa-and-ryugu-to-scale.png`
+- **ONC Image**: File: `ONC.png`
+- **MASCOT Image**: File: `MASCOT.png`
+... etc ...
+
+### Usage
+
+To initialize and utilize this asset in OpenSpace:
+
+```lua
+asset.onInitialize(function()
+  openspace.addScreenSpaceRenderable(CapsuleImage)
+  ...etc
+end)
+To deinitialize:
+
+lua
+Copy code
+asset.onDeinitialize(function()
+  openspace.removeScreenSpaceRenderable(CapsuleImage)
+  ... etc ...
+end)
+Metadata
+Name: Hayabusa2 Return Capsule
+Version: 1.0
+Author: NASA, ESA and Allison Loll/Jeff Hester (Arizona State University). Acknowledgement: Davide De Martin (ESA/Hubble)
+URL: Hayabusa2 Details
+License: CC BY 4.0
+Dependencies
+Util/Slide Deck Helper: A utility to handle slide decks in OpenSpace.
+Controls
+
+###slideaction
+nextSlide(): Move to the next slide.
+previousSlide(): Move to the previous slide.
+toggleSlides(): Show or hide the slides.
+go
+
+
 ## Configuration Files
 1. `mission.asset`: Contains data for mission panel and timeline.
 2. `yuji_1_ryugu.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
