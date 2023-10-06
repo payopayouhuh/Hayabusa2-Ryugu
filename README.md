@@ -128,6 +128,40 @@ go
 4. `hayabusa2_labels`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
 5. `slide_image`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
 
+## HAYABUSA2.profile
+This profile is specialized in learning about and explaining HAYABUSA2
+
+### Features:
+- Addition of elements described on this page.
+- Initial start at HAYABUSA2's position.
+- Addition of various actions and shortcut keys.
+
+
+### Examples:
+```json
+"keybindings": [
+  {
+    "action": "nextslide",
+    "key": "CTRL+RIGHT"
+  },
+  {
+    "action": "prevslide",
+    "key": "CTRL+LEFT"
+  },
+  {
+    "action": "slide_decktoggleslides",
+    "key": "CTRL+DOWN"
+  },
+  {
+    "action": "hayabusa2Focus",
+    "key": "CTRL+V"
+  },
+  {
+    "action": "RyuguFocus_s",
+    "key": "CTRL+B"
+  },
+]
+
 ## Additional Resources
 - OpenSpace Wiki Pages
 - Documentation found in local OpenSpace folder: `OpenSpace/OpenSpace-<your version>/documentation/index.html`
