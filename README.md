@@ -123,7 +123,7 @@ go
 
 ## Configuration Files
 1. `mission.asset`: Contains data for mission panel and timeline.
-2. `yuji_1_ryugu.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
+2. `HAYABUSA2.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
 3. `Hayabusa2`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\assets`
 4. `hayabusa2_labels`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
 5. `slide_image`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
