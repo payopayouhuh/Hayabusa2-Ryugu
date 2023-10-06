@@ -156,11 +156,9 @@ This profile is specialized in learning about and explaining HAYABUSA2
     "action": "hayabusa2Focus",
     "key": "CTRL+V"
   },
-  {
-    "action": "RyuguFocus_s",
-    "key": "CTRL+B"
-  },
+
 ]
+```
 
 ## Additional Resources
 - OpenSpace Wiki Pages
