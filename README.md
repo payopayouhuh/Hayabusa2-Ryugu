@@ -1,6 +1,17 @@
 # Visualizing Hayabusa 2 Mission in OpenSpace
 
+This is an additional file of Open Space that I created during my internship at the American Museum of Natural History.
+
 ![Visualizing Hayabusa 2 Mission](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/a1217937-79c8-47f5-9241-a775148a9a50)
+
+## Configuration Files
+
+To run this package, place each folder in the following location.
+1. `mission.asset`: Contains data for mission panel and timeline.
+2. `HAYABUSA2.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
+3. `Hayabusa2`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\assets`
+4. `hayabusa2_labels`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
+5. `slide_image`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
 
 ## Data Source
 This visualization is based on Hayabusa 2 SPICE data for the surveying and collection phase of the mission. 
@@ -121,12 +132,6 @@ toggleSlides(): Show or hide the slides.
 go
 
 
-## Configuration Files
-1. `mission.asset`: Contains data for mission panel and timeline.
-2. `HAYABUSA2.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
-3. `Hayabusa2`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\assets`
-4. `hayabusa2_labels`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
-5. `slide_image`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
 
 ## HAYABUSA2.profile
 This profile is specialized in learning about and explaining HAYABUSA2
