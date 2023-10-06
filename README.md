@@ -74,14 +74,25 @@ asset.onInitialize(function()
 end)
 To deinitialize:
 
-lua
-Copy code
 asset.onDeinitialize(function()
   openspace.removeScreenSpaceRenderable(CapsuleImage)
   ... etc ...
 end)
 
 ```
+### add picture
+#### add code
+```
+
+  helper.addSlide(deck, slide_image.image .. "image1.png")
+  helper.addSlide(deck, slide_image.image .. "image2.png")
+  helper.addSlide(deck, slide_image.image .. "image3.png")
+  helper.addSlide(deck, slide_image.image .. "etc.jpg")
+
+```
+#### add pic
+- C:\OpenSpace\OpenSpace-0.19.0\sync\http\slide_image\1
+
 ### Metadata
 Name: Hayabusa2 Return Capsule
 Version: 1.0
