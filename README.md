@@ -158,6 +158,7 @@ This profile is specialized in learning about and explaining HAYABUSA2
   },
 
 ]
+
 ```
 
 ## Additional Resources
