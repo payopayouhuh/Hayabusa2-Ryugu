@@ -74,14 +74,36 @@ asset.onInitialize(function()
 end)
 To deinitialize:
 
-lua
-Copy code
 asset.onDeinitialize(function()
   openspace.removeScreenSpaceRenderable(CapsuleImage)
   ... etc ...
 end)
 
 ```
+### How to add images to a slide deck
+#### Add images
+If you want to add images to your slide deck, use the helper.addSlide function.
+
+example
+```
+
+  helper.addSlide(deck, slide_image.image .. "image1.png")
+  helper.addSlide(deck, slide_image.image .. "image2.png")
+  helper.addSlide(deck, slide_image.image .. "image3.png")
+  helper.addSlide(deck, slide_image.image .. "etc.jpg")
+
+```
+
+This will add the specified image to your slidedeck.asset
+
+#### Image reference destination
+In the above code, slide_image.image is used as the base path for the image. I need to add the image at that file location
+
+example
+- C:\OpenSpace\OpenSpace-0.19.0\sync\http\slide_image\image1.png
+
+This will load images from the specified location within your OpenSpace directory andasset display them as slides.
+
 ### Metadata
 Name: Hayabusa2 Return Capsule
 Version: 1.0
@@ -101,10 +123,43 @@ go
 
 ## Configuration Files
 1. `mission.asset`: Contains data for mission panel and timeline.
-2. `yuji_1_ryugu.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
+2. `HAYABUSA2.profile`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\profiles`
 3. `Hayabusa2`: `C:\OpenSpace\OpenSpace-0.19.0\user\data\assets`
 4. `hayabusa2_labels`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
 5. `slide_image`: `C:\OpenSpace\OpenSpace-0.19.0\sync\http`
+
+## HAYABUSA2.profile
+This profile is specialized in learning about and explaining HAYABUSA2
+
+### Features:
+- Addition of elements described on this page.
+- Initial start at HAYABUSA2's position.
+- Addition of various actions and shortcut keys.
+
+
+### Examples:
+```json
+"keybindings": [
+  {
+    "action": "nextslide",
+    "key": "CTRL+RIGHT"
+  },
+  {
+    "action": "prevslide",
+    "key": "CTRL+LEFT"
+  },
+  {
+    "action": "slide_decktoggleslides",
+    "key": "CTRL+DOWN"
+  },
+  {
+    "action": "hayabusa2Focus",
+    "key": "CTRL+V"
+  },
+
+]
+
+```
 
 ## Additional Resources
 - OpenSpace Wiki Pages
