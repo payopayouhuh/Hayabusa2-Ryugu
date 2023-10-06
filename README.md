@@ -93,6 +93,7 @@ example
   helper.addSlide(deck, slide_image.image .. "etc.jpg")
 
 ```
+
 This will add the specified image to your slidedeck.asset
 
 #### Image reference destination
