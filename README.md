@@ -80,7 +80,9 @@ asset.onDeinitialize(function()
   openspace.removeScreenSpaceRenderable(CapsuleImage)
   ... etc ...
 end)
-Metadata
+
+```
+###Metadata
 Name: Hayabusa2 Return Capsule
 Version: 1.0
 Author: NASA, ESA and Allison Loll/Jeff Hester (Arizona State University). Acknowledgement: Davide De Martin (ESA/Hubble)
