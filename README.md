@@ -82,7 +82,7 @@ asset.onDeinitialize(function()
 end)
 
 ```
-###Metadata
+### Metadata
 Name: Hayabusa2 Return Capsule
 Version: 1.0
 Author: NASA, ESA and Allison Loll/Jeff Hester (Arizona State University). Acknowledgement: Davide De Martin (ESA/Hubble)
@@ -92,7 +92,7 @@ Dependencies
 Util/Slide Deck Helper: A utility to handle slide decks in OpenSpace.
 Controls
 
-###slideaction
+### slideaction
 nextSlide(): Move to the next slide.
 previousSlide(): Move to the previous slide.
 toggleSlides(): Show or hide the slides.
