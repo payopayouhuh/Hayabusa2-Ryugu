@@ -27,11 +27,6 @@ local hayabusa2 = {
             DestinationFrame = "GALACTIC",
             Kernels = kernels.hayabusa2Kernels
         },
-        -- Translation = {
-        --     Type = "SpiceTranslation",
-        --     Target = BennuBodyId,
-        --     Observer = "SSB"
-        -- },
         TimeFrame = {
             Type = "TimeFrameInterval",
             Start = missionBegin,
@@ -260,7 +255,6 @@ asset.onInitialize(function()
   openspace.action.registerAction(AddInsignias)
   openspace.action.registerAction(AddInsignias_2)
   openspace.action.registerAction(RemoveInsignias_2)
-  -- openspace.action.registerAction(InsigniasEnabled)
 end)
 
 asset.onDeinitialize(function()
