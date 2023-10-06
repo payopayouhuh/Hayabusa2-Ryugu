@@ -80,8 +80,11 @@ asset.onDeinitialize(function()
 end)
 
 ```
-### add picture
-#### add code
+### How to add images to a slide deck
+#### Add images
+If you want to add images to your slide deck, use the helper.addSlide function.
+
+example
 ```
 
   helper.addSlide(deck, slide_image.image .. "image1.png")
@@ -90,8 +93,15 @@ end)
   helper.addSlide(deck, slide_image.image .. "etc.jpg")
 
 ```
-#### add pic
-- C:\OpenSpace\OpenSpace-0.19.0\sync\http\slide_image\1
+This will add the specified image to your slidedeck.asset
+
+#### Image reference destination
+In the above code, slide_image.image is used as the base path for the image. I need to add the image at that file location
+
+example
+- C:\OpenSpace\OpenSpace-0.19.0\sync\http\slide_image\image1.png
+
+This will load images from the specified location within your OpenSpace directory andasset display them as slides.
 
 ### Metadata
 Name: Hayabusa2 Return Capsule
