@@ -51,6 +51,21 @@ The Mission Panel contains:
 - Interactive timeline with milestones and mission phases
 - Functional buttons like "Set Focus to Hayabusa 2", "Fly to Ryugu", and more.
 
+## Mission.asset
+
+This file contains the information displayed in the mission panel and mission timeline.
+This file can be found in C:\OpenSpace\OpenSpace-0.19.0\user\data\assets\Hayabusa2\Hayabusa2
+The variables present in this file are explained below.
+Name: A short name for the phase or milestone.
+- Date: Date and time the specific milestone took place
+- TimeRange: Indicates the start and end dates and times when a particular phase took place
+- Image: attach up to one photo that symbolizes the phase or milestone.
+- Tips: “mission.asset” file only takes a URL to load images.So you can’t add photos locally.
+- Description: Description of the phase or milestone
+- Actions: The actions described here are added as buttons within the mission panel. Actions must be defined in other files.
+- Link: This can be used when the Description alone is not sufficient.The link listed here will appear as buttons in the mission panel, and clicking the button will take you to the designated link.
+
+
 ## Mission Timeline
 **Milestones**:
 We highlighted five major events. Each milestone has a detailed description and associated image.
