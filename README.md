@@ -1,6 +1,7 @@
 # Visualizing Hayabusa 2 Mission in OpenSpace
 
 This is an additional file of Open Space that I created during my internship at the American Museum of Natural History.
+アメリカ自然史博物館(AMNH) Computer Visualization Group 制作物
 
 ![Visualizing Hayabusa 2 Mission](https://github.com/payopayouhuh/Visualizing-Hayabusa-2-Mission-in-OpenSpace/assets/134220954/a1217937-79c8-47f5-9241-a775148a9a50)
 
